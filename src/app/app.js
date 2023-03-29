@@ -1,5 +1,11 @@
 const app = Vue.createApp({
-  template: "<h1>Hello World</h1>",
+  data() {
+    return {
+      title: "Power of Vue",
+      author: "Ray Doan",
+      age: 30,
+    };
+  }
 });
 
 app.mount("#app");

@@ -31,3 +31,9 @@ Once Vue is injected via CDN, we can use the whole Vue suite.
   - When see `data-v-app`, that means we are using Vue app to mount the DOM.
 - data:
 - functions:
+
+### Data & Templates
+
+To do dynamic data or data from the html into the component, we use the `data` function in the Vue component. Being able to use this means that we are not hard coding data and we manipulate it in the Vue component.
+
+Note: Accessing the variable must be within the Vue component and the naming must be very exact.
