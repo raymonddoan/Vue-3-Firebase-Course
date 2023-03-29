@@ -22,3 +22,12 @@ Creating a SPA (Single Page Application) and is most commonly used. Vue's SPA in
 - Suspense Component
 - TS Support
 - Improved reactivity & performance gains
+
+## #2 - Vue Basics
+
+Once Vue is injected via CDN, we can use the whole Vue suite.
+
+- template:
+  - When see `data-v-app`, that means we are using Vue app to mount the DOM.
+- data:
+- functions:
