@@ -7,7 +7,12 @@ const app = Vue.createApp({
       isShown: true,
       buttonText: "Hide Books",
       posX: 0,
-      posY: 0
+      posY: 0,
+      books: [
+        { title: "Power of Vue", author: "Evan You" },
+        { title: "Extremity", author: "Raymond Doan" },
+        { title: "Design of Designs", author: "Trevor Scott" },
+      ],
     };
   },
   methods: {
@@ -26,12 +31,12 @@ const app = Vue.createApp({
     handleMousemove(e) {
       this.posX = e.offsetX;
       this.posY = e.offsetY;
-    }
+    },
   },
   computed: {
     // buttonText() {
     //   return this.isShown ? "Hide Books" : "Show Books"
-    // } 
+    // }
   },
 });
 

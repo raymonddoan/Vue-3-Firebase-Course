@@ -62,3 +62,8 @@ When using these mouse events, we get access to the `event` object. This is made
 
 `handleEvent($event, 5)` allows us to use the event object AND pass an explicit data point if needed.
 
+### Outputting lists (v-for)
+
+Used to render lists.
+
+

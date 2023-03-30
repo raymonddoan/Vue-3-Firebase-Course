@@ -24,14 +24,22 @@
 
   <div id="app">
     <div v-if="isShown">
-      <p>{{ title }} - {{ author }} - {{ age }}</p>
-    </div>
+      <!-- <p>{{ title }} - {{ author }} - {{ age }}</p> -->
 
-    <button v-on:click="age++">Increase age</button>
-    <button v-on:click="age--">Decrease age</button>
+      <ul>
+        <li v-for="book in books">
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.author }}</p>
+        </li>
+      </ul>
+    </div>
 
     <br></br>
     <button @click="toggleBooks()">{{ buttonText }}</button>
+
+    <br></br>
+    <button v-on:click="age++">Increase age</button>
+    <button v-on:click="age--">Decrease age</button>
 
     <br></br>
     <div @click="changeTitle('Words of Food')">Change book title</div>
