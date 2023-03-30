@@ -5,7 +5,9 @@ const app = Vue.createApp({
       author: "Ray Doan",
       age: 30,
       isShown: true,
-      // buttonText: "Hide Books",
+      buttonText: "Hide Books",
+      posX: 0,
+      posY: 0
     };
   },
   methods: {
@@ -15,8 +17,16 @@ const app = Vue.createApp({
     },
     toggleBooks() {
       this.isShown = !this.isShown;
-      // this.buttonText = this.isShown ? "Hide Books" : "Show Books";
+      this.buttonText = this.isShown ? "Hide Books" : "Show Books";
     },
+    handleEvent(e, data) {
+      console.log(e, e.type);
+      return data ? console.log(data) : null;
+    },
+    handleMousemove(e) {
+      this.posX = e.offsetX;
+      this.posY = e.offsetY;
+    }
   },
   computed: {
     // buttonText() {

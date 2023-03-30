@@ -51,3 +51,14 @@ In Vue, directives are specific calls to functions that you can make to the comp
 
 - `v-if` completely removes the element from the DOM (less performant, so use cases would be login dependencies, etc)
 - `v-show` only hides the element from the DOM (more  performant)
+
+## Vue.js Basics Part 2
+
+### Other mouse events
+
+There are other mouse events like `mouseover`, `mouseleave` and `dblClick`.
+
+When using these mouse events, we get access to the `event` object. This is made possible by handling the mouse event.
+
+`handleEvent($event, 5)` allows us to use the event object AND pass an explicit data point if needed.
+
