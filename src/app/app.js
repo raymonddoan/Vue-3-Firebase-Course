@@ -4,8 +4,21 @@ const app = Vue.createApp({
       title: "Power of Vue",
       author: "Ray Doan",
       age: 30,
+      isShown: true,
+      buttonText: "Hide Books",
     };
-  }
+  },
+  methods: {
+    changeTitle(title) {
+      // this.title = 'Words of Wisdom'
+      this.title = title;
+    },
+    toggleBooks() {
+      this.isShown = !this.isShown;
+      this.buttonText = this.isShown ? "Hide Books" : "Show Books";
+    },
+  },
+  computed: {}
 });
 
 app.mount("#app");

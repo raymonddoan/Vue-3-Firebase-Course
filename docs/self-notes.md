@@ -37,3 +37,17 @@ Once Vue is injected via CDN, we can use the whole Vue suite.
 To do dynamic data or data from the html into the component, we use the `data` function in the Vue component. Being able to use this means that we are not hard coding data and we manipulate it in the Vue component.
 
 Note: Accessing the variable must be within the Vue component and the naming must be very exact.
+
+### Click Events
+
+In Vue, directives are specific calls to functions that you can make to the component(?). For example:
+
+- When looking for an event, `v-on` is used.
+  - When specific to a click event, `v-on:click` is used.
+
+### Conditional Rendering
+
+`v-if` is the directive to allows for this. You can set the data of the component by using the `this` constructor.
+
+- `v-if` completely removes the element from the DOM (less performant, so use cases would be login dependencies, etc)
+- `v-show` only hides the element from the DOM (more  performant)
