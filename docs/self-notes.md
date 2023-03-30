@@ -66,4 +66,8 @@ When using these mouse events, we get access to the `event` object. This is made
 
 Used to render lists.
 
+### Attribute Binding
 
+`v-bind` allows the attribute to be dynamic.
+
+ie. `v-bind:href` or `:href` will check the component to look for listed variable.

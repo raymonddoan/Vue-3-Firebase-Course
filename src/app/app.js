@@ -5,15 +5,16 @@ const app = Vue.createApp({
       author: "Ray Doan",
       age: 30,
       isShown: true,
-      buttonText: "Hide Books",
+      buttonText: "Hide Quotes",
       posX: 0,
       posY: 0,
-      books: [
-        { title: "Power of Vue", author: "Evan You" },
-        { title: "Extremity", author: "Raymond Doan" },
-        { title: "Design of Designs", author: "Trevor Scott" },
-      ],
+      quotes: [],
     };
+  },
+  created() {
+    this.getRandomQuotes().then((res) => {
+      this.quotes = res.slice(0, 5);
+    });
   },
   methods: {
     changeTitle(title) {
@@ -22,7 +23,7 @@ const app = Vue.createApp({
     },
     toggleBooks() {
       this.isShown = !this.isShown;
-      this.buttonText = this.isShown ? "Hide Books" : "Show Books";
+      this.buttonText = this.isShown ? "Hide Quotes" : "Show Quotes";
     },
     handleEvent(e, data) {
       console.log(e, e.type);
@@ -32,10 +33,17 @@ const app = Vue.createApp({
       this.posX = e.offsetX;
       this.posY = e.offsetY;
     },
+    async getRandomQuotes() {
+      let quotes = fetch("https://animechan.vercel.app/api/quotes").then(
+        (response) => response.json()
+      );
+      return quotes;
+    },
   },
+  mounted() {},
   computed: {
     // buttonText() {
-    //   return this.isShown ? "Hide Books" : "Show Books"
+    //   return this.isShown ? "Hide Quotes" : "Show Quotes"
     // }
   },
 });
