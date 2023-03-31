@@ -86,4 +86,6 @@ Computed properties are a way to define data in the component, based on the data
 
 Since we are directly importing Vue, then we don't need to use `Vue.createApp`. We can also get the specific module into the code, not the whole Vue package.
 
+### Vue files & templates
 
+No need for a `<div>` to wrap everything.
