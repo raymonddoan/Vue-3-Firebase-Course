@@ -16,15 +16,20 @@
       margin: 20px;
       display: inline-block;
     }
+
     body {
       background: #eee;
       max-width: 960px;
       margin: 20px auto;
     }
-    p, h3, ul {
+
+    p,
+    h3,
+    ul {
       margin: 0;
       padding: 0;
     }
+
     li {
       list-style-type: none;
       background: #fff;
@@ -35,6 +40,7 @@
       align-items: center;
       justify-content: space-between;
     }
+
     li.fav {
       background: darkcyan;
       color: white;
@@ -46,11 +52,14 @@
   <h1>Hello World :)</h1>
 
   <div id="app">
+    <button @click="toggleBooks()">{{ buttonText }}</button>
+
+    <br></br>
     <div v-if="isShown">
       <!-- <p>{{ title }} - {{ author }} - {{ age }}</p> -->
 
       <ul>
-        <li v-for="quote in quotes" :class="{ fav: quote.isFav }" @click="toggleBook($event, quote)">
+        <li v-for="quote in filteredQuotes" :class="{ fav: quote.isFav }" @click="toggleBook($event, quote)">
           <div>
             <h2>{{ quote.anime }}</h2>
             <h3>{{ quote.character }}</h3>
@@ -60,9 +69,6 @@
         </li>
       </ul>
     </div>
-
-    <br></br>
-    <button @click="toggleBooks()">{{ buttonText }}</button>
 
     <br></br>
     <button v-on:click="age++">Increase age</button>

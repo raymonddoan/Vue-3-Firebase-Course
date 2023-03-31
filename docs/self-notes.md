@@ -75,3 +75,7 @@ ie. `v-bind:href` or `:href` will check the component to look for listed variabl
 ### Dynamic classes
 
 Dynamic classes are added by `v-bind`ing variables to the class attribute of the DOM element.
+
+### Computed properties
+
+Computed properties are a way to define data in the component, based on the data within the component.

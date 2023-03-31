@@ -57,6 +57,9 @@ const app = Vue.createApp({
     // buttonText() {
     //   return this.isShown ? "Hide Quotes" : "Show Quotes"
     // }
+    filteredQuotes() {
+      return this.quotes.filter((quote) => quote.isFav === true)
+    }
   },
 });
 
