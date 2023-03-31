@@ -52,7 +52,7 @@ In Vue, directives are specific calls to functions that you can make to the comp
 - `v-if` completely removes the element from the DOM (less performant, so use cases would be login dependencies, etc)
 - `v-show` only hides the element from the DOM (more  performant)
 
-## Vue.js Basics Part 2
+## #3 - Vue.js Basics Part 2
 
 ### Other mouse events
 
