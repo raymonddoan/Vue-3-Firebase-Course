@@ -79,3 +79,11 @@ Dynamic classes are added by `v-bind`ing variables to the class attribute of the
 ### Computed properties
 
 Computed properties are a way to define data in the component, based on the data within the component.
+
+## #4 - The Vue CLI & Bigger Projects
+
+### Project walkthrough
+
+Since we are directly importing Vue, then we don't need to use `Vue.createApp`. We can also get the specific module into the code, not the whole Vue package.
+
+
