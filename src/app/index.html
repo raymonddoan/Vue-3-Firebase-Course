@@ -12,9 +12,32 @@
       padding: 100px 0;
       width: 400px;
       text-align: center;
-      background: #eee;
+      background: #aaa;
       margin: 20px;
       display: inline-block;
+    }
+    body {
+      background: #eee;
+      max-width: 960px;
+      margin: 20px auto;
+    }
+    p, h3, ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style-type: none;
+      background: #fff;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    li.fav {
+      background: darkcyan;
+      color: white;
     }
   </style>
 </head>
@@ -27,10 +50,13 @@
       <!-- <p>{{ title }} - {{ author }} - {{ age }}</p> -->
 
       <ul>
-        <li v-for="quote in quotes">
-          <h3>{{ quote.quote }}</h3>
-          <p>{{ quote.anime }}</p>
-          <p>{{ quote.character }}</p>
+        <li v-for="quote in quotes" :class="{ fav: quote.isFav }" @click="toggleBook($event, quote)">
+          <div>
+            <h2>{{ quote.anime }}</h2>
+            <h3>{{ quote.character }}</h3>
+            <br>
+            <p>{{ quote.quote }}</p>
+          </div>
         </li>
       </ul>
     </div>

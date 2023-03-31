@@ -71,3 +71,7 @@ Used to render lists.
 `v-bind` allows the attribute to be dynamic.
 
 ie. `v-bind:href` or `:href` will check the component to look for listed variable.
+
+### Dynamic classes
+
+Dynamic classes are added by `v-bind`ing variables to the class attribute of the DOM element.

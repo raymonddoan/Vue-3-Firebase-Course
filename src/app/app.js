@@ -13,7 +13,15 @@ const app = Vue.createApp({
   },
   created() {
     this.getRandomQuotes().then((res) => {
-      this.quotes = res.slice(0, 5);
+      let response = res.slice(0, 5);
+      response.forEach((element) => {
+        if (!element.anime.includes(" ")) {
+          element.isFav = true;
+        } else {
+          element.isFav = false;
+        }
+      });
+      this.quotes = response;
     });
   },
   methods: {
@@ -32,6 +40,10 @@ const app = Vue.createApp({
     handleMousemove(e) {
       this.posX = e.offsetX;
       this.posY = e.offsetY;
+    },
+    toggleBook(e, data) {
+      e.preventDefault();
+      data.isFav = !data.isFav;
     },
     async getRandomQuotes() {
       let quotes = fetch("https://animechan.vercel.app/api/quotes").then(
