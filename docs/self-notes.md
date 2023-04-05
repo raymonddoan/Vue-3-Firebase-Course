@@ -93,3 +93,17 @@ No need for a `<div>` to wrap everything.
 ### Template refs
 
 Adding 'handle' for DOM element allows us to reference to the specific DOM element in the script. To reference in the `<script>`, you use `this.$refs`.
+
+## Multiple components
+
+Split applications into multiple Vue components.
+
+Reasons:
+
+- Makes it reusable
+- More maintainable
+
+Component Tree -> Parents Component (1st parent is generally the App.vue) -> Children Component
+
+Naming convention: Create the component in PascalCase
+

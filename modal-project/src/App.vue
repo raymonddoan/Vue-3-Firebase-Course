@@ -3,14 +3,17 @@
   <br />
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
+  <Modal />
 </template>
 
 <script lang="ts">
 import "@total-typescript/ts-reset";
 import { defineComponent } from "vue";
+import Modal from "./components/Modal.vue";
 
 export default defineComponent({
   name: "App",
+  components: { Modal },
   data() {
     return {
       title: "My First Vue App :)",
