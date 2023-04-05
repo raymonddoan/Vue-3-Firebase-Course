@@ -122,3 +122,7 @@ To avoid this:
 ### Props
 
 Prop drilling - passing props from parent component to the child component. Good so that we can define the data in one place.
+
+### Emitting custom events
+
+Fire an event within the child component and then the parent listen to the child component

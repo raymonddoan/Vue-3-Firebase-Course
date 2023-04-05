@@ -3,7 +3,12 @@
   <br />
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
-  <Modal :header="header" :text="text" :theme="theme" />
+  <br />
+  <p>Welcome ...</p>
+  <button @click="toggleModal">open modal</button>
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" :theme="theme" @close="toggleModal"/>
+  </div>
 </template>
 
 <script lang="ts">
@@ -19,7 +24,8 @@ export default defineComponent({
       title: "My First Vue App :)",
       header: "This is a nice giveaway!",
       text: "You are the lucky winner!",
-      theme: "sale"
+      theme: "sale",
+      showModal: false
     };
   },
   methods: {
@@ -28,6 +34,9 @@ export default defineComponent({
       name.classList.add("active");
       name.focus();
     },
+    toggleModal() {
+      this.showModal = !this.showModal
+    }
   },
 });
 </script>
