@@ -94,7 +94,7 @@ No need for a `<div>` to wrap everything.
 
 Adding 'handle' for DOM element allows us to reference to the specific DOM element in the script. To reference in the `<script>`, you use `this.$refs`.
 
-## Multiple components
+### Multiple components
 
 Split applications into multiple Vue components.
 
@@ -106,4 +106,17 @@ Reasons:
 Component Tree -> Parents Component (1st parent is generally the App.vue) -> Children Component
 
 Naming convention: Create the component in PascalCase
+
+## Vue CLI & Bigger Projects
+
+### Scoped & global CSS
+
+Styling is passed down from the parent to the child component, however the styling in the child component will persist through the entire application.
+
+To avoid this:
+
+- Set `<style scoped>` to scope all the style to the component itself (Vue is able to do this by adding a specific but randomised `data-v` attribute)
+  - Downsides are a performance hit and you might want to pass the styling into the html file but cannot because it is scoped.
+- Make it the styling more specific (ie. `.modal h1`)
+
 

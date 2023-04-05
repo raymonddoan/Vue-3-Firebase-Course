@@ -1,14 +1,13 @@
 <template>
   <div class="backdrop">
     <div class="modal">
+      <h1>Modal Title</h1>
       <p>modal content</p>
     </div>
   </div>
 </template>
 
-<script>
-  
-</script>
+<script></script>
 
 <style>
 .modal {
@@ -18,6 +17,13 @@
   background: white;
   border-radius: 10px;
 }
+.modal h1 {
+  color: aliceblue;
+}
+.modal p {
+  font-style: normal;
+}
+
 .backdrop {
   top: 0;
   position: fixed;
