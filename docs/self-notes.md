@@ -126,3 +126,9 @@ Prop drilling - passing props from parent component to the child component. Good
 ### Emitting custom events
 
 Fire an event within the child component and then the parent listen to the child component
+
+### Click event modifiers
+
+Use this to customise (add restrictions, etc) the click event. Some of these modifiers include `@click.self`, `@click.right`, etc...
+
+

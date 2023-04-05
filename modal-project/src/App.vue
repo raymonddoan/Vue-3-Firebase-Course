@@ -5,7 +5,7 @@
   <button @click="handleClick">click me</button>
   <br />
   <p>Welcome ...</p>
-  <button @click="toggleModal">open modal</button>
+  <button @click.alt="toggleModal">open modal (please hold alt while clicking)</button>
   <div v-if="showModal">
     <Modal :header="header" :text="text" :theme="theme" @close="toggleModal"/>
   </div>
