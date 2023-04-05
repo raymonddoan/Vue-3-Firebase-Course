@@ -119,4 +119,6 @@ To avoid this:
   - Downsides are a performance hit and you might want to pass the styling into the html file but cannot because it is scoped.
 - Make it the styling more specific (ie. `.modal h1`)
 
+### Props
 
+Prop drilling - passing props from parent component to the child component. Good so that we can define the data in one place.

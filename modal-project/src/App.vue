@@ -3,7 +3,7 @@
   <br />
   <input type="text" ref="name" />
   <button @click="handleClick">click me</button>
-  <Modal />
+  <Modal :header="header" :text="text" :theme="theme" />
 </template>
 
 <script lang="ts">
@@ -17,6 +17,9 @@ export default defineComponent({
   data() {
     return {
       title: "My First Vue App :)",
+      header: "This is a nice giveaway!",
+      text: "You are the lucky winner!",
+      theme: "sale"
     };
   },
   methods: {
