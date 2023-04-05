@@ -5,9 +5,18 @@
   <button @click="handleClick">click me</button>
   <br />
   <p>Welcome ...</p>
-  <button @click.alt="toggleModal">open modal (please hold alt while clicking)</button>
+  <button @click.alt="toggleModal">
+    open modal (please hold alt while clicking)
+  </button>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" :theme="theme" @close="toggleModal"/>
+    <Modal :theme="theme" @close="toggleModal">
+      <template v-slot:links>
+        <a href="#">Sign up now</a>
+        <a href="#">More info</a>
+      </template>
+      <h1>{{ header }}</h1>
+      <p>{{ text }}</p>
+    </Modal>
   </div>
 </template>
 
@@ -24,8 +33,8 @@ export default defineComponent({
       title: "My First Vue App :)",
       header: "This is a nice giveaway!",
       text: "You are the lucky winner!",
-      theme: "sale",
-      showModal: false
+      theme: "",
+      showModal: false,
     };
   },
   methods: {
@@ -35,8 +44,8 @@ export default defineComponent({
       name.focus();
     },
     toggleModal() {
-      this.showModal = !this.showModal
-    }
+      this.showModal = !this.showModal;
+    },
   },
 });
 </script>

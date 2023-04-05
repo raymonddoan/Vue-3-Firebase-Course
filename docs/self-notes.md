@@ -50,7 +50,7 @@ In Vue, directives are specific calls to functions that you can make to the comp
 `v-if` is the directive to allows for this. You can set the data of the component by using the `this` constructor.
 
 - `v-if` completely removes the element from the DOM (less performant, so use cases would be login dependencies, etc)
-- `v-show` only hides the element from the DOM (more  performant)
+- `v-show` only hides the element from the DOM (more performant)
 
 ## #3 - Vue.js Basics Part 2
 
@@ -131,4 +131,23 @@ Fire an event within the child component and then the parent listen to the child
 
 Use this to customise (add restrictions, etc) the click event. Some of these modifiers include `@click.self`, `@click.right`, etc...
 
+### Slots
 
+Slots are useful to passing in templates into components. Props pass in primitives, whilst slots are for templates.
+
+You can also do named slots:
+
+In App.vue:
+
+```vue
+<template v-slot:links>
+  <a href="#">Sign up now</a>
+  <a href="#">More info</a>
+</template>
+```
+
+In Modal.vue:
+
+```vue
+<slot name="links"></slot>
+```
