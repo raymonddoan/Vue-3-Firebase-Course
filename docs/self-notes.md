@@ -89,3 +89,7 @@ Since we are directly importing Vue, then we don't need to use `Vue.createApp`. 
 ### Vue files & templates
 
 No need for a `<div>` to wrap everything.
+
+### Template refs
+
+Adding 'handle' for DOM element allows us to reference to the specific DOM element in the script. To reference in the `<script>`, you use `this.$refs`.

@@ -11,9 +11,10 @@
     "vue": "^3.2.13"
   },
   "devDependencies": {
+    "@total-typescript/ts-reset": "^0.4.2",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "typescript": "~4.5.5"
+    "typescript": "^5.1.0-dev.20230404"
   }
 }

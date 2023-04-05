@@ -1,17 +1,28 @@
 <template>
   <h1>{{ title }}</h1>
+  <br />
+  <input type="text" ref="name" />
+  <button @click="handleClick">click me</button>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import "@total-typescript/ts-reset";
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   data() {
     return {
-      title: 'My First Vue App :)'
-    }
-  }
+      title: "My First Vue App :)",
+    };
+  },
+  methods: {
+    handleClick() {
+      const name = this.$refs["name"] as any;
+      name.classList.add("active");
+      name.focus();
+    },
+  },
 });
 </script>
 
