@@ -13,14 +13,16 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
   props: ["header", "text", "theme"],
   methods: {
     closeModal() {
       this.$emit("close");
     },
   },
-};
+});
 </script>
 
 <style>
