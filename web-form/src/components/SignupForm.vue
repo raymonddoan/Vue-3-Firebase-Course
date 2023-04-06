@@ -11,11 +11,32 @@
       <option value="developer">Developer</option>
       <option value="designer">Web Designer</option>
     </select>
+
+    <div class="terms">
+      <input type="checkbox" name="" id="" required v-model="checkTerms">
+      <label for="">Accept Terms and Conditions</label>
+    </div>
+
+    <!-- <div>
+      <input type="checkbox" name="" id="" value="Naruto" v-model="names">
+      <label for="">Naruto</label>
+    </div>
+    <div>
+      <input type="checkbox" name="" id="" value="Mario" v-model="names">
+      <label for="">Mario</label>
+    </div>
+    <div>
+      <input type="checkbox" name="" id="" value="Superman" v-model="names">
+      <label for="">Superman</label>
+    </div> -->
+
   </form>
 
   <p>Email: {{ email }}</p>
   <p>Password: {{ password }}</p>
   <p>Role: {{ role }}</p>
+  <p>Terms accepted: {{ checkTerms }}</p>
+  <!-- <p>Names: {{ names }}</p> -->
 </template>
 
 <script lang="ts">
@@ -27,6 +48,8 @@ export default defineComponent({
       email: "",
       password: "",
       role: "developer",
+      checkTerms: false,
+      // names: [],
     };
   },
 });
@@ -60,13 +83,13 @@ select {
   border-bottom: 1px solid #ddd;
   color: #555;
 }
-/* input[type="checkbox"] {
+input[type="checkbox"] {
     display: inline-block;
     width: 16px;
     margin: 0 10px 0 0;
     position: relative;
     top: 2px;
-  } */
+  }
 /* .pill {
     display: inline-block;
     margin: 20px 10px 0 0;
