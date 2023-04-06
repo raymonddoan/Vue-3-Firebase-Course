@@ -13,17 +13,17 @@ export default defineComponent({
     };
   },
   mounted() {
-    console.log("component mounted");
+    // console.log("component mounted");
     setTimeout(() => {
       this.showBlock = true;
-      console.log(this.delay);
+      // console.log(this.delay);
     }, this.delay);
   },
   updated() {
-    console.log("component updated");
+    // console.log("component updated");
   },
   unmounted() {
-    console.log("unmounted");
+    // console.log("unmounted");
   },
 });
 </script>
