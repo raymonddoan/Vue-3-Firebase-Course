@@ -175,4 +175,8 @@ More details in [link](https://vuejs.org/guide/essentials/lifecycle.html#lifecyc
 
 ## #7 - Forms & Inputs
 
+### VModel && 2-way data binding
 
+VModel = Another Vue directive to track the data and update it accordingly.
+
+2-way data binding means the template updates the data, and then the data also updates the template as well.
