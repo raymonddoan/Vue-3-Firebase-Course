@@ -157,5 +157,3 @@ In Modal.vue:
 Taking a small part of another modal and injecting it in another area. We can do this by using the `<teleport to="{specific class}"></teleport>`.
 
 Note: You will lose the styling on the component as it is now "injected" into another DOM element, which means you would need to update the styling.
-
-
