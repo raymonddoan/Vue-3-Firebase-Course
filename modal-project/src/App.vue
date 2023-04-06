@@ -12,6 +12,7 @@
   <button @click="toggleModalTwo">
     Show yourself
   </button>
+
   <div v-if="showModal">
     <Modal :theme="theme" @close="toggleModal">
       <template v-slot:links>
@@ -22,12 +23,13 @@
       <p>{{ text }}</p>
     </Modal>
   </div>
-  <div v-if="showModalTwo">
+  
+  <teleport to=".modals" v-if="showModalTwo">
     <Modal :theme="theme" @close="toggleModalTwo">
-      <h1>Rawr! 🦁</h1>
+      <h1>🦁 Rawr! You are in the ".modals" section 🦁</h1>
       <p>Welcome to the jungle</p>
     </Modal>
-  </div>
+  </teleport>
 </template>
 
 <script lang="ts">
@@ -65,7 +67,7 @@ export default defineComponent({
 </script>
 
 <style>
-#app {
+#app, .modal {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
