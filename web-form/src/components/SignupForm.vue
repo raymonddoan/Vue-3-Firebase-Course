@@ -1,10 +1,10 @@
 <template>
   <form>
     <label>Email:</label>
-    <input type="email" name="" id="" required v-model="email" />
+    <input type="email" name="" id="email" required v-model="email" />
 
     <label>Password:</label>
-    <input type="password" name="" id="" required v-model="password" />
+    <input type="password" name="" id="password" required v-model="password" />
 
     <label>Role:</label>
     <select v-model="role">
@@ -12,8 +12,17 @@
       <option value="designer">Web Designer</option>
     </select>
 
+    <label>Skills:</label>
+    <input
+      type="text"
+      name=""
+      id="skill"
+      v-model="tempSkill"
+      @keyup="addSkill"
+    />
+
     <div class="terms">
-      <input type="checkbox" name="" id="" required v-model="checkTerms">
+      <input type="checkbox" name="" id="terms" required v-model="checkTerms" />
       <label for="">Accept Terms and Conditions</label>
     </div>
 
@@ -29,13 +38,13 @@
       <input type="checkbox" name="" id="" value="Superman" v-model="names">
       <label for="">Superman</label>
     </div> -->
-
   </form>
 
   <p>Email: {{ email }}</p>
   <p>Password: {{ password }}</p>
   <p>Role: {{ role }}</p>
   <p>Terms accepted: {{ checkTerms }}</p>
+  <p>Skills: {{ skills }}</p>
   <!-- <p>Names: {{ names }}</p> -->
 </template>
 
@@ -49,8 +58,17 @@ export default defineComponent({
       password: "",
       role: "developer",
       checkTerms: false,
+      tempSkill: "",
+      skills: [],
       // names: [],
     };
+  },
+  methods: {
+    addSkill(e: KeyboardEvent) {
+      if (e.key === "," && this.tempSkill) {
+        console.log(e);
+      }
+    },
   },
 });
 </script>
@@ -84,12 +102,12 @@ select {
   color: #555;
 }
 input[type="checkbox"] {
-    display: inline-block;
-    width: 16px;
-    margin: 0 10px 0 0;
-    position: relative;
-    top: 2px;
-  }
+  display: inline-block;
+  width: 16px;
+  margin: 0 10px 0 0;
+  position: relative;
+  top: 2px;
+}
 /* .pill {
     display: inline-block;
     margin: 20px 10px 0 0;
