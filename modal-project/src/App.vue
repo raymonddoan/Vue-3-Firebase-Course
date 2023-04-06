@@ -8,6 +8,10 @@
   <button @click.alt="toggleModal">
     open modal (please hold alt while clicking)
   </button>
+  <p>Welcome to the beast of the jungle</p>
+  <button @click="toggleModalTwo">
+    Show yourself
+  </button>
   <div v-if="showModal">
     <Modal :theme="theme" @close="toggleModal">
       <template v-slot:links>
@@ -16,6 +20,12 @@
       </template>
       <h1>{{ header }}</h1>
       <p>{{ text }}</p>
+    </Modal>
+  </div>
+  <div v-if="showModalTwo">
+    <Modal :theme="theme" @close="toggleModalTwo">
+      <h1>Rawr! 🦁</h1>
+      <p>Welcome to the jungle</p>
     </Modal>
   </div>
 </template>
@@ -35,6 +45,7 @@ export default defineComponent({
       text: "You are the lucky winner!",
       theme: "",
       showModal: false,
+      showModalTwo: false,
     };
   },
   methods: {
@@ -45,6 +56,9 @@ export default defineComponent({
     },
     toggleModal() {
       this.showModal = !this.showModal;
+    },
+    toggleModalTwo() {
+      this.showModalTwo = !this.showModalTwo;
     },
   },
 });
