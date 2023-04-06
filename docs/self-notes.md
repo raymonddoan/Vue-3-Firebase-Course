@@ -172,3 +172,7 @@ created -> mounted -> updated -> unmounted/destroyed
 - beforeUnmount & unmounted: used for component cleanup
 
 More details in [link](https://vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram)
+
+## #7 - Forms & Inputs
+
+
