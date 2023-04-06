@@ -157,3 +157,18 @@ In Modal.vue:
 Taking a small part of another modal and injecting it in another area. We can do this by using the `<teleport to="{specific class}"></teleport>`.
 
 Note: You will lose the styling on the component as it is now "injected" into another DOM element, which means you would need to update the styling.
+
+## #6 - Build a Reaction Timer Game
+
+### Lifecycle Hooks
+
+created -> mounted -> updated -> unmounted/destroyed
+
+- beforeCreate: before the component is initialised
+- created: can't access data or template
+- beforeMount: component compiles, but not mounted. Can access the data and template.
+- mounted:
+- beforeUpdate & updated: this occurs when data changes
+- beforeUnmount & unmounted: used for component cleanup
+
+More details in [link](https://vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram)

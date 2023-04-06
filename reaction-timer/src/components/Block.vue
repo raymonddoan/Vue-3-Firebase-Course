@@ -1,15 +1,31 @@
 <template>
-  <div class="block">
-    click me
-  </div>
+  <div class="block" v-if="showBlock">click me</div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  props: ['delay']
-})
+  props: ["delay"],
+  data() {
+    return {
+      showBlock: false,
+    };
+  },
+  mounted() {
+    console.log("component mounted");
+    setTimeout(() => {
+      this.showBlock = true;
+      console.log(this.delay);
+    }, this.delay);
+  },
+  updated() {
+    console.log("component updated");
+  },
+  unmounted() {
+    console.log("unmounted");
+  },
+});
 </script>
 
 <style scoped>
