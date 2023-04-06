@@ -18,8 +18,16 @@
       name=""
       id="skill"
       v-model="tempSkill"
-      @keyup="addSkill"
+      @keyup.alt="addSkill"
     />
+    <div
+      v-for="(skill, index) in skills"
+      :key="skill"
+      class="pill"
+      @click="removeSkill(skill, index)"
+    >
+      {{ skill }}
+    </div>
 
     <div class="terms">
       <input type="checkbox" name="" id="terms" required v-model="checkTerms" />
@@ -59,15 +67,22 @@ export default defineComponent({
       role: "developer",
       checkTerms: false,
       tempSkill: "",
-      skills: [],
+      skills: [] as string[],
       // names: [],
     };
   },
   methods: {
     addSkill(e: KeyboardEvent) {
       if (e.key === "," && this.tempSkill) {
-        console.log(e);
+        if (!this.skills.includes(this.tempSkill)) {
+          this.skills.push(this.tempSkill);
+        }
+        this.tempSkill = "";
       }
+    },
+    removeSkill(item: string, index: number) {
+      // this.skills.splice(index, 1); // method 1
+      this.skills = this.skills.filter((skill) => skill !== item); // method 2
     },
   },
 });
@@ -108,18 +123,18 @@ input[type="checkbox"] {
   position: relative;
   top: 2px;
 }
-/* .pill {
-    display: inline-block;
-    margin: 20px 10px 0 0;
-    padding: 6px 12px;
-    background: #eee;
-    border-radius: 20px;
-    font-size: 12px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    color: #777;
-    cursor: pointer;
-  } */
+.pill {
+  display: inline-block;
+  margin: 20px 10px 0 0;
+  padding: 6px 12px;
+  background: #eee;
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #777;
+  cursor: pointer;
+}
 /* button {
     background: #0b6dff;
     border: 0;
