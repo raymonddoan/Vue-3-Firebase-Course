@@ -8,25 +8,21 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+import { Job } from "./JobDetails.vue";
+
+export default defineComponent({
   data() {
     return {
-      jobs: [
-        {
-          title: "Software Developer",
-          id: 1,
-          details: "Developing the software",
-        },
-        {
-          title: "Software Designer",
-          id: 2,
-          details: "Designing the software",
-        },
-        { title: "Engineering Manager", id: 3, details: "Managing the team" },
-      ],
+      jobs: [] as Job[],
     };
   },
-};
+  mounted() {
+    fetch("http://localhost:3000/jobs")
+      .then((res) => res.json())
+      .then((data) => (this.jobs = data));
+  },
+});
 </script>
 
 <style>

@@ -235,4 +235,3 @@ To catch missing pages, the following is needed into the router:
 ### JSON Server
 
 - generate a fake database
-
