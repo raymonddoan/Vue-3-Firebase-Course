@@ -180,3 +180,13 @@ More details in [link](https://vuejs.org/guide/essentials/lifecycle.html#lifecyc
 VModel = Another Vue directive to track the data and update it accordingly.
 
 2-way data binding means the template updates the data, and then the data also updates the template as well.
+
+## #8 - The Vue Router
+
+### Why Vue Router?
+
+Redirects the client to render another component without making a call back to the server.
+
+### Vue Router Setup
+
+
