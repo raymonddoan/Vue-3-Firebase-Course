@@ -189,4 +189,12 @@ Redirects the client to render another component without making a call back to t
 
 ### Vue Router Setup
 
+`src/router/index.ts`:
 
+- routes: represents the possible paths
+- createRouter: creates the actual router
+- createWebHistory: web history in the browser to navigate through the app
+
+`App.vue`:
+
+- `<router-view/>`: this is where we inject the router
