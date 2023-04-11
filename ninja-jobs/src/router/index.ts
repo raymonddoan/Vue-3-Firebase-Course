@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import AboutViewVue from "../views/AboutView.vue";
+import AboutView from "../views/AboutView.vue";
 import HomeView from "../views/HomeView.vue";
 import JobDetailsView from "../views/jobs/JobDetails.vue";
 import JobsView from "../views/jobs/JobsView.vue";
+import NotFoundView from "../views/NotFound.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -13,7 +14,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/about",
     name: "About",
-    component: AboutViewVue,
+    component: AboutView,
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -32,11 +33,22 @@ const routes: Array<RouteRecordRaw> = [
     path: "/jobs/:id",
     name: "JobDetails",
     component: JobDetailsView,
-    props: true, 
+    props: true,
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     // component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+  },
+  // redirect
+  {
+    path: "/all-jobs",
+    redirect: "/jobs",
+  },
+  // 404s
+  {
+    path: "/:catchAll(.*)",
+    name: "NotFound",
+    component: NotFoundView,
   },
 ];
 
