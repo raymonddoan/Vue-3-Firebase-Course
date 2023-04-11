@@ -1,0 +1,90 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Vue</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <style>
+    .box {
+      padding: 100px 0;
+      width: 400px;
+      text-align: center;
+      background: #aaa;
+      margin: 20px;
+      display: inline-block;
+    }
+
+    body {
+      background: #eee;
+      max-width: 960px;
+      margin: 20px auto;
+    }
+
+    p,
+    h3,
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style-type: none;
+      background: #fff;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    li.fav {
+      background: darkcyan;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Hello World :)</h1>
+
+  <div id="app">
+    <button @click="toggleBooks()">{{ buttonText }}</button>
+
+    <br></br>
+    <div v-if="isShown">
+      <!-- <p>{{ title }} - {{ author }} - {{ age }}</p> -->
+
+      <ul>
+        <li v-for="quote in filteredQuotes" :class="{ fav: quote.isFav }" @click="toggleBook($event, quote)">
+          <div>
+            <h2>{{ quote.anime }}</h2>
+            <h3>{{ quote.character }}</h3>
+            <br>
+            <p>{{ quote.quote }}</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <br></br>
+    <button v-on:click="age++">Increase age</button>
+    <button v-on:click="age--">Decrease age</button>
+
+    <br></br>
+    <div @click="changeTitle('Words of Food')">Change book title</div>
+
+    <div class="box" @mouseover="handleEvent($event, 5)">mouseover</div>
+    <div class="box" @mouseleave="handleEvent">mouseleave</div>
+    <div class="box" @dblClick="handleEvent">double click</div>
+    <div class="box" @mousemove="handleMousemove">position - x: {{posX}} y: {{posY}}</div>
+
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
