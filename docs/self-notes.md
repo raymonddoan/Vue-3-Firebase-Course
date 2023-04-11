@@ -206,3 +206,9 @@ These will allow Vue to intercept the `href` link, meaning we don't need to refr
 ### Route params
 
 General structure is `/jobs/{slug}` or `/jobs/:id`. We call the param by using `$route.params.id`.
+
+### Dynamic links
+
+1. Set `props` to `true` in the router to allow for the components to accept the passing of properties
+2. Pass the values via the `params` object in the `router-link`
+3. Add `props` into the view component
