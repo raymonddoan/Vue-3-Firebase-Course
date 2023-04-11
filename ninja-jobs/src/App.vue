@@ -13,7 +13,9 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
   methods: {
     redirect() {
       this.$router.push({ name: "Home" });
@@ -25,7 +27,7 @@ export default {
       this.$router.go(1);
     },
   },
-};
+});
 </script>
 
 <style>
