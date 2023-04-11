@@ -181,7 +181,7 @@ VModel = Another Vue directive to track the data and update it accordingly.
 
 2-way data binding means the template updates the data, and then the data also updates the template as well.
 
-## #8 - The Vue Router
+## #8 - The Vue Router (lesson 46-)
 
 ### Why Vue Router?
 
@@ -198,3 +198,7 @@ Redirects the client to render another component without making a call back to t
 `App.vue`:
 
 - `<router-view/>`: this is where we inject the router
+
+### Router links
+
+These will allow Vue to intercept the `href` link, meaning we don't need to refresh the page.
