@@ -202,3 +202,7 @@ Redirects the client to render another component without making a call back to t
 ### Router links
 
 These will allow Vue to intercept the `href` link, meaning we don't need to refresh the page.
+
+### Route params
+
+General structure is `/jobs/{slug}` or `/jobs/:id`. We call the param by using `$route.params.id`.
