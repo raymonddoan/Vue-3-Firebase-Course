@@ -235,3 +235,9 @@ To catch missing pages, the following is needed into the router:
 ### JSON Server
 
 - generate a fake database
+
+## #10 - The Composition API (part 1)
+
+### Drawbacks for Options API
+
+- There are too many moving parts
