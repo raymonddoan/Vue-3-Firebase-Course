@@ -225,3 +225,7 @@ To catch missing pages, the following is needed into the router:
     component: NotFoundView,
   },
 ```
+
+### Programmatic navigation
+
+`this.$router` refers the whole router, whilst `this.$route` refers to the route that the router navigates through
