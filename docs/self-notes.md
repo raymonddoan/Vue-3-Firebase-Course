@@ -229,3 +229,10 @@ To catch missing pages, the following is needed into the router:
 ### Programmatic navigation
 
 `this.$router` refers the whole router, whilst `this.$route` refers to the route that the router navigates through
+
+## #9 - Fetching Data
+
+### JSON Server
+
+- generate a fake database
+
